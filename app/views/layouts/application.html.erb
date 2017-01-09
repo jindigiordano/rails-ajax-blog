@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A Basic Blog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <h1>A Basic Blog</h1>
+      <%= link_to "All Posts", posts_path %>
+      <%= link_to "New", new_post_url %>
+
+    </nav>
+    <%= yield %>
+  </body>
+</html>

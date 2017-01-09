@@ -1,0 +1,15 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ h1, nav {
+   display: inline;
+   padding: 10px;
+ }
+
+a {
+  margin: 0 5px;
+}
+
+.post-container, .blog-content {
+  padding: 0 100px !important;
+}
