@@ -19,12 +19,7 @@
 $(document).ready(function(){
 
   $('a').on('click', function(event){
-    console.log($(event.target).siblings('.edit_post'))
     $(event.target).siblings('.edit_post').addClass('selected');
-  })
-
-  $('form').on('submit', function(event){
-    console.log(event.parent())
   })
 
 })
