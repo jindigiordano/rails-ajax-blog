@@ -1,3 +1,4 @@
-$("<%= j render @post %>").appendTo('.edit_post')
+$(".selected").closest('.col-xs-12').html("<%= j render @post %>")
 $('form')[0].reset();
 $('.edit_post').hide();
+$(".selected").removeClass("selected");

@@ -15,3 +15,11 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+
+  $('a').on('click', function(event){
+    $(event.target).siblings('.edit_post').addClass('selected');
+  })
+
+})
