@@ -9,17 +9,27 @@ class PostsController < ApplicationController
   # New action for creating post
   def new
     @post = Post.new
+
+    respond_to do |format|
+      format.html {redirect_to new_post_path}
+      format.js {}
+    end
   end
 
   # Create action saves the post into database
   def create
     @post = Post.new(post_params)
-    if @post.save(post_params)
-      flash[:notice] = "Successfully created post!"
-      redirect_to post_path(@post)
-    else
-      flash[:alert] = "Error creating new post!"
-      render :new
+    respond_to do |format|
+      if @post.save(post_params)
+        flash[:notice] = "Successfully created post!"
+        format.html { redirect_to @post }
+        format.js {}
+        format.json { render json: @post, status: :created, location: @post }
+      else
+        flash[:alert] = "Error creating new post!"
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
