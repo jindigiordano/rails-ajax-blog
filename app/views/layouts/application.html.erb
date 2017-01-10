@@ -12,7 +12,7 @@
     <nav>
       <h1>A Basic Blog</h1>
       <%= link_to "All Posts", posts_path %>
-      <%= link_to "New", new_post_url %>
+      <%= link_to "New", new_post_path, remote: true  %>
 
     </nav>
     <%= yield %>
