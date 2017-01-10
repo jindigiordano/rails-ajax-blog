@@ -9,6 +9,11 @@ class PostsController < ApplicationController
   # New action for creating post
   def new
     @post = Post.new
+
+    respond_to do |format|
+      format.html {redirect_to new_post_path}
+      format.js {}
+    end
   end
 
   # Create action saves the post into database
