@@ -9,8 +9,10 @@
   </div>
 
 
-  <%= link_to "EDIT", edit_post_path(post) %>
+  <%= link_to "EDIT", edit_post_path(post), remote: true %>
   <%= link_to 'DELETE', post_path(post), :method => :delete %>
 
   <br>
+  <div class="edit_post">
+  </div>
 </div>

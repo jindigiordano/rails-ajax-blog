@@ -1,12 +1,9 @@
 <div class="container">
   <div class="col-sm-10 col-sm-offset-1 col-xs-12 blog-content">
 
-    <div class="new_post">
+    <div class="new_post"></div>
 
-    </div>
+    <%= render partial: "posts/post", collection: @posts %>
 
-    <% @posts.each do |post| %>
-    <%= render partial: "posts/post", locals: { post: post } %>
-    <% end %>
   </div>
 </div>

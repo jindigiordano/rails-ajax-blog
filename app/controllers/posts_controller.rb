@@ -35,6 +35,10 @@ class PostsController < ApplicationController
 
   # Edit action retrives the post and renders the edit page
   def edit
+    respond_to do |format|
+      format.html {redirect_to edit_post_path}
+      format.js {}
+    end
   end
 
   # Update action updates the post with the new information
