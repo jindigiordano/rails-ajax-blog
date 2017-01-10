@@ -43,12 +43,17 @@ class PostsController < ApplicationController
 
   # Update action updates the post with the new information
   def update
-    if @post.update_attributes(post_params)
-      flash[:notice] = "Successfully updated post!"
-      redirect_to post_path(@post)
-    else
-      flash[:alert] = "Error updating post!"
-      render :edit
+    respond_to do |format|
+      if @post.update_attributes(post_params)
+        flash[:notice] = "Successfully updated post!"
+        format.html { redirect_to @post }
+        format.js {}
+        format.json { render json: @post}
+      else
+        flash[:alert] = "Error updating post!"
+        format.html { render :edit }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
