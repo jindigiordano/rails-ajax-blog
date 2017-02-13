@@ -1,6 +1,6 @@
-# A Simple Rails AJAX Blog
+# A Simple Rails Blog
 
-Just a simple Rails blog, uses CRUD and AJAX. 
+Just a simple Rails blog, uses CRUD and REST. 
 
 View demo [here](https://peaceful-oasis-77750.herokuapp.com/)!
 
